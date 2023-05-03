@@ -1,6 +1,26 @@
 {
-  "navigationFallback": {
-    "rewrite": "/index.html",
-    "exclude": ["*.{css,scss,js,png,gif,ico,jpg,svg}"]
-  }
-}
+     "routes": [
+          {
+         "route": "/",
+                "allowedRoles": [ "authenticated" ]
+       }
+     ],
+     "responseOverrides": {
+             "401": {
+               "redirect": "/.auth/login/aad",
+               "statusCode": 302
+             }
+           },
+     "auth": {
+       "identityProviders": {
+         "azureActiveDirectory": {
+           "registration": {
+             "openIdIssuer": "https://login.microsoftonline.com/7027dd0c-aca1-4acf-908d-766630ea25bf"</font>,
+             "clientIdSettingName": "AADClientID",
+             "clientSecretSettingName": "AADSecret"
+           },"userDetailsClaim': "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"
+                 }
+       }
+     }
+   }
+</font></p>
