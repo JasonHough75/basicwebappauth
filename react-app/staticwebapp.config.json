@@ -1,26 +1,24 @@
 {
-     "routes": [
-          {
-         "route": "/products",
-                "allowedRoles": [ "authenticated" ]
-       }
-     ],
-     "responseOverrides": {
-             "401": {
-               "redirect": "/.auth/login/aad",
-               "statusCode": 302
-             }
-           },
-     "auth": {
-       "identityProviders": {
-         "azureActiveDirectory": {
-           "registration": {
-             "openIdIssuer": "https://login.microsoftonline.com/7027dd0c-aca1-4acf-908d-766630ea25bf",
-             "clientIdSettingName": "AADClientID",
-             "clientSecretSettingName": "AADSecret"
-           },"userDetailsClaim": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"
-                 }
-       }
-     }
-   }
+  "routes": [
+    {
+      "route": "/products",
+      "allowedRoles": [ "authenticated" ]
+    }
+  ],
+  "auth": {
+    "identityProviders": {
+      "azureActiveDirectory": {
+        "userDetailsClaim": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+        "registration": {
+          "openIdIssuer": "https://login.microsoftonline.com/7027dd0c-aca1-4acf-908d-766630ea25bf",
+          "clientIdSettingName": "AADClientID",
+          "clientSecretSettingName": "AADSecret"
+        }
+      }
+    }
+  },
+  "globalHeaders": {
+    "Cache-Control": "no-cache"
+  }
+}
 
