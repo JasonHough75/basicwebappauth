@@ -15,7 +15,7 @@
        "identityProviders": {
          "azureActiveDirectory": {
            "registration": {
-             "openIdIssuer": "https://login.microsoftonline.com/7027dd0c-aca1-4acf-908d-766630ea25bf",
+             "openIdIssuer": "https://login.microsoftonline.com/7027dd0c-aca1-4acf-908d-766630ea25bfa",
              "clientIdSettingName": "AADClientID",
              "clientSecretSettingName": "AADSecret"
            },"userDetailsClaim": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"
